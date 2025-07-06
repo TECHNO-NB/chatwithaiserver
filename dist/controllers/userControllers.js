@@ -5,10 +5,10 @@ import ApiResponse from "../utils/ApiResponse.js";
 import asyncHandler from "../utils/asyncHandler.js";
 import { sendEmail } from "../utils/resendConfig.js";
 const options = {
-    domain: "localhost",
+    domain: "chat-with-pdf-a-i-frontend.vercel.app",
     httpOnly: true,
     secure: true,
-    sameSite: "lax",
+    sameSite: "none",
     maxAge: 7 * 24 * 60 * 60 * 1000,
 };
 const signupController = asyncHandler(async (req, res) => {

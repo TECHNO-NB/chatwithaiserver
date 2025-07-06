@@ -9,7 +9,7 @@ import docRoute from "./routes/docRoutes.js";
 import checkOut from "./routes/checkOutRoutes.js";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
-import rateLimit from "express-rate-limit";
+// import rateLimit from "express-rate-limit";
 
 const app: Application = express();
 
@@ -24,17 +24,17 @@ app.use(
   })
 );
 
-const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000,
-  max: 100,
-  standardHeaders: true,
-  legacyHeaders: false,
-  message: {
-    status: 429,
-    error: "Too many requests, please try again later.",
-  },
-});
-app.use(limiter);
+// const limiter = rateLimit({
+//   windowMs: 10 * 60 * 1000,
+//   max: 100,
+//   standardHeaders: true,
+//   legacyHeaders: false,
+//   message: {
+//     status: 429,
+//     error: "Too many requests, please try again later.",
+//   },
+// });
+// app.use(limiter);
 app.use(cookieParser());
 app.disable("x-powered-by");
 app.use(helmet());

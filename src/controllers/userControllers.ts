@@ -8,10 +8,9 @@ import asyncHandler from "../utils/asyncHandler.js";
 import { sendEmail } from "../utils/resendConfig.js";
 
 const options = {
-  domain: "localhost",
   httpOnly: true,
   secure: true,
-  sameSite: "lax",
+  sameSite: "none",
   maxAge: 7 * 24 * 60 * 60 * 1000,
 };
 
